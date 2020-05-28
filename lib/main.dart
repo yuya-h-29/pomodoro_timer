@@ -38,10 +38,19 @@ class _countDownTimerState extends State<countDownTimer> {
   int sec;
   String minStr = '25';
   String secStr = '00';
+  bool isRunning = false;
 
   void startOrStop() {
     if (timeLeftInSec == 0){
       timeLeftInSec = 1500;
+    }
+
+    // need to find how to stop the timer...
+    if(isRunning){
+      timer.cancel();
+      isRunning = false;
+    } else {
+      isRunning = true;
     }
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
