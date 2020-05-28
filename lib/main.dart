@@ -32,7 +32,7 @@ class countDownTimer extends StatefulWidget {
 }
 
 class _countDownTimerState extends State<countDownTimer> {
-  int timeLeftInSec = 100;
+  int timeLeftInSec = 1500;
   Timer timer;
   int min;
   int sec;
@@ -41,7 +41,7 @@ class _countDownTimerState extends State<countDownTimer> {
 
   void startOrStop() {
     if (timeLeftInSec == 0){
-      timeLeftInSec = 100;
+      timeLeftInSec = 1500;
     }
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
@@ -50,7 +50,7 @@ class _countDownTimerState extends State<countDownTimer> {
           min = (timeLeftInSec / 60).truncate();
           minStr = (min % 60).toString().padLeft(2, '0');
           sec = timeLeftInSec - min * 60;
-          secStr = sec.toString().padLeft(1, '0');
+          secStr = sec.toString().padLeft(2, '0');
         } else {
           timer.cancel();
         }
@@ -72,7 +72,7 @@ class _countDownTimerState extends State<countDownTimer> {
               fontFamily: 'Chelsea',
             ),
           ),
-          (timeLeftInSec == 100)
+          (timeLeftInSec == 1500)
               ? Text(
                   'Tap Pomotaro\nand\nstart timer!!',
                   textAlign: TextAlign.center,
