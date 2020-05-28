@@ -33,20 +33,11 @@ class countDownTimer extends StatefulWidget {
 
 class _countDownTimerState extends State<countDownTimer> {
   int timeLeftInSec = 100;
-  var timeLeft;
   Timer timer;
   int min;
-
-//  bool hasStarted = false;
-
-//  void startOrStop(){
-//    if (!hasStarted) {
-//      startTimer();
-//      hasStarted = true;
-//    }
-//  }
-
-//  var format = new DateFormat("mm:ss");
+  int sec;
+  String minStr = '25';
+  String secStr = '00';
 
   void startOrStop() {
     if (timeLeftInSec == 0){
@@ -56,19 +47,13 @@ class _countDownTimerState extends State<countDownTimer> {
       setState(() {
         if (timeLeftInSec > 0) {
           timeLeftInSec--;
-//          timeLeft= Duration(minutes: timeLeftInSec.inMinutes )
+          min = (timeLeftInSec / 60).truncate();
+          minStr = (min % 60).toString().padLeft(2, '0');
+          sec = timeLeftInSec - min * 60;
+          secStr = sec.toString().padLeft(1, '0');
         } else {
           timer.cancel();
         }
-//          hasStarted = true;
-//         else {
-//          timer.cancel();
-////          hasStarted = false;
-//          if (timeLeft > 0){
-//            posedTime = timeLeft;
-//            print(posedTime);
-//          }
-//        }
       });
     });
   }
@@ -80,7 +65,7 @@ class _countDownTimerState extends State<countDownTimer> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text(
-            '$timeLeft',
+            '$minStr : $secStr',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 60,
