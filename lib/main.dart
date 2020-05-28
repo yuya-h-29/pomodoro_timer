@@ -1,7 +1,7 @@
 import 'dart:async';
-
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
+//import 'dart:math';
 
 void main() {
   runApp(
@@ -32,7 +32,7 @@ class countDownTimer extends StatefulWidget {
 }
 
 class _countDownTimerState extends State<countDownTimer> {
-  int timeLeftInSec = 1500;
+  int timeLeftInSec = 10;
   Timer timer;
   int min;
   int sec;
@@ -42,7 +42,7 @@ class _countDownTimerState extends State<countDownTimer> {
 
   void startOrStop() {
     if (timeLeftInSec == 0){
-      timeLeftInSec = 1500;
+      timeLeftInSec = 10;
     }
 
     // need to find how to stop the timer...
@@ -61,6 +61,8 @@ class _countDownTimerState extends State<countDownTimer> {
           sec = timeLeftInSec - min * 60;
           secStr = sec.toString().padLeft(2, '0');
         } else {
+          final player = AudioCache();
+          player.play('bikehorn.wav');
           timer.cancel();
         }
       });
@@ -81,7 +83,7 @@ class _countDownTimerState extends State<countDownTimer> {
               fontFamily: 'Chelsea',
             ),
           ),
-          (timeLeftInSec == 1500)
+          (timeLeftInSec == 10)
               ? Text(
                   'Tap Pomotaro\nand\nstart timer!!',
                   textAlign: TextAlign.center,
