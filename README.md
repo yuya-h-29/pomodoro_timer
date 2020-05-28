@@ -1,6 +1,6 @@
 # pomodoro
 
-A new Flutter application.
+It is a simple moible app. 
 
 ## Getting Started
 
