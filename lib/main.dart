@@ -47,12 +47,7 @@ class _countDownTimerState extends State<countDownTimer> {
     }
 
     // need to find how to stop the timer...
-//    if(isRunning){
-//      timer.cancel();
-//      isRunning = false;
-//    } else {
-//      isRunning = true;
-//    }
+
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         if (timeLeftInSec > 0) {
