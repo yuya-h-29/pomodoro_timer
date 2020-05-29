@@ -43,7 +43,9 @@ class _quotesState extends State<quotes> {
     return Scaffold(
       backgroundColor: Colors.orange[100],
       body: Center(
+
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Expanded(
               child: Center(
@@ -71,7 +73,7 @@ class _quotesState extends State<quotes> {
                 child: (author != null)
                     ? Text(
                         '$author',
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.end,
                         style: TextStyle(
                             fontFamily: 'Chelsea',
                             fontSize: 30,

@@ -22,12 +22,12 @@ class MyApp extends StatelessWidget {
               'Welcome!!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.red[300],
+                color: Colors.white,
                 fontSize: 45,
                 fontFamily: 'Source Sans Pro',
               ),
             ),
-            backgroundColor: Colors.orange[100],
+            backgroundColor: Colors.red[800],
             bottom: TabBar(
               tabs: [
                 Tab(
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                     child: Icon(
                       Icons.alarm_on,
                       size: 45,
-                      color: Colors.red[300],
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
                     child: Icon(
                       Icons.format_quote,
                       size: 45,
-                      color: Colors.red[300],
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
                     child: Icon(
                       Icons.list,
                       size: 45,
-                      color: Colors.red[300],
+                      color: Colors.white,
                     ),
                   ),
                 ),
