@@ -1,128 +1,73 @@
 import 'dart:async';
-import 'package:audioplayers/audio_cache.dart';
+
 import 'package:flutter/material.dart';
-//import 'dart:math';
+import 'package:pomodoro/screens/countDownTimer.dart';
+import 'package:pomodoro/screens/quotes.dart';
+import 'package:pomodoro/screens/todo.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.orange[100],
-        appBar: AppBar(
-          title: Text(
-            'Pomodoro Timer',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.red[300],
-              fontSize: 45,
-              fontFamily: 'Source Sans Pro',
-            ),
-          ),
-          backgroundColor: Colors.orange[100],
-        ),
-        body: countDownTimer(),
-      ),
-    ),
-  );
+  runApp(MyApp());
 }
 
-class countDownTimer extends StatefulWidget {
-  @override
-  _countDownTimerState createState() => _countDownTimerState();
-}
-
-class _countDownTimerState extends State<countDownTimer> {
-  int timeLeftInSec = 10;
-  Timer timer;
-  int min;
-  int sec;
-  String minStr = '25';
-  String secStr = '00';
-
-//  bool isRunning = false;
-
-  void startOrStop() {
-    if (timeLeftInSec == 0) {
-      timeLeftInSec = 10;
-    }
-
-    // need to find how to stop the timer...
-
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        if (timeLeftInSec > 0) {
-          timeLeftInSec--;
-          min = (timeLeftInSec / 60).truncate();
-          minStr = (min % 60).toString().padLeft(2, '0');
-          sec = timeLeftInSec - min * 60;
-          secStr = sec.toString().padLeft(2, '0');
-        } else {
-          final player = AudioCache();
-          player.play('bikehorn.wav');
-          timer.cancel();
-//          timeLeftInSec = 10;
-        }
-      });
-    });
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Center(
-              child: Text(
-                '$minStr : $secStr',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 60,
-                  fontFamily: 'Chelsea',
-                ),
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        initialIndex: 0,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              'Welcome!!',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.red[300],
+                fontSize: 45,
+                fontFamily: 'Source Sans Pro',
               ),
             ),
-          ),
-          Expanded(
-            child: (timeLeftInSec == 10)
-                ? Text(
-                    'Tap Pomotaro\nand\nstart timer!!',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Chelsea',
-                        fontSize: 50,
-                        color: Colors.pink[800]),
-                  )
-                : (timeLeftInSec > 0)
-                    ? Text(
-                        'You can do it!!',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 50,
-                            color: Colors.pink[800]),
-                      )
-                    : Text(
-                        'Otsukaresama!!',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 50,
-                            color: Colors.pink[800]),
-                      ),
-          ),
-          Expanded(
-            flex: 2,
-            child: FlatButton(
-              onPressed: () {
-                startOrStop();
-              },
-              child: Image.asset('images/tomato.png'),
+            backgroundColor: Colors.orange[100],
+            bottom: TabBar(
+              tabs: [
+                Tab(
+                  child: Container(
+                    child: Icon(
+                      Icons.alarm_on,
+                      size: 45,
+                      color: Colors.red[300],
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    child: Icon(
+                      Icons.format_quote,
+                      size: 45,
+                      color: Colors.red[300],
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    child: Icon(
+                      Icons.list,
+                      size: 45,
+                      color: Colors.red[300],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
+          body: TabBarView(
+            children: [
+              countDownTimer(),
+              quotes(),
+              todo(),
+            ],
+          ),
+        ),
       ),
     );
   }
