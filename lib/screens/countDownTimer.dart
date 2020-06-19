@@ -8,7 +8,7 @@ class countDownTimer extends StatefulWidget {
 }
 
 class _countDownTimerState extends State<countDownTimer> {
-  int timeLeftInSec = 10;
+  int timeLeftInSec = 1500;
   Timer timer;
   int min;
   int sec;
@@ -19,7 +19,7 @@ class _countDownTimerState extends State<countDownTimer> {
 
   void startOrStop() {
     if (timeLeftInSec == 0) {
-      timeLeftInSec = 10;
+      timeLeftInSec = 1500;
     }
 
     // need to find how to stop the timer...
@@ -67,7 +67,7 @@ class _countDownTimerState extends State<countDownTimer> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: (timeLeftInSec == 10)
+                  child: (timeLeftInSec == 1500)
                       ? Text(
                           'Tap Pomotaro\nand\nstart timer!!',
                           textAlign: TextAlign.center,
