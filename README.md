@@ -1,16 +1,15 @@
-# pomodoro
+# Pomodoro Timer 
 
-It is a simple moible app. 
+This is a mobile app for simple Pomodoro timer, which is a 25min timer to immerse yourself in the task for 25 minutes. 
+Hard to keep your motivation up? Try the random quote generator function!! 
 
-## Getting Started
+## Technologies
+Programming language
+Dart 
+Framework 
+Flutter 
 
-This project is a starting point for a Flutter application.
+### Information
 
-A few resources to get you started if this is your first Flutter project:
+Works on both iOS and Android.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
