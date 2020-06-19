@@ -47,61 +47,64 @@ class _countDownTimerState extends State<countDownTimer> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.orange[100],
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Center(
-                  child: Text(
-                    '$minStr : $secStr',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 60,
-                      fontFamily: 'Chelsea',
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Center(
+                    child: Text(
+                      '$minStr : $secStr',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 60,
+                        fontFamily: 'Chelsea',
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: (timeLeftInSec == 10)
-                    ? Text(
-                        'Tap Pomotaro\nand\nstart timer!!',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 50,
-                            color: Colors.pink[800]),
-                      )
-                    : (timeLeftInSec > 0)
-                        ? Text(
-                            'You can do it!!',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Chelsea',
-                                fontSize: 50,
-                                color: Colors.pink[800]),
-                          )
-                        : Text(
-                            'Otsukaresama!!',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Chelsea',
-                                fontSize: 50,
-                                color: Colors.pink[800]),
-                          ),
-              ),
-              Expanded(
-                flex: 2,
-                child: FlatButton(
-                  onPressed: () {
-                    startOrStop();
-                  },
-                  child: Image.asset('images/tomato.png'),
+                Expanded(
+                  flex: 1,
+                  child: (timeLeftInSec == 10)
+                      ? Text(
+                          'Tap Pomotaro\nand\nstart timer!!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Chelsea',
+                              fontSize: 30,
+                              color: Colors.pink[800]),
+                        )
+                      : (timeLeftInSec > 0)
+                          ? Text(
+                              'You can do it!!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Chelsea',
+                                  fontSize: 40,
+                                  color: Colors.pink[800]),
+                            )
+                          : Text(
+                              'Otsukaresama!!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Chelsea',
+                                  fontSize: 40,
+                                  color: Colors.pink[800]),
+                            ),
                 ),
-              ),
-            ],
+                Expanded(
+                  flex: 2,
+                  child: FlatButton(
+                    onPressed: () {
+                      startOrStop();
+                    },
+                    child: Image.asset('images/tomato.png'),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

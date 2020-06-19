@@ -42,65 +42,71 @@ class _quotesState extends State<quotes> {
     getData();
     return Scaffold(
       backgroundColor: Colors.orange[100],
-      body: Center(
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Expanded(
-              child: Center(
-                child: (text != null)
-                    ? Text(
-                        '$text',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 40,
-                            color: Colors.pink[800]),
-                      )
-                    : Text(
-                        'Tap Pomotaro\nand\nget quote!!',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 50,
-                            color: Colors.pink[800]),
-                      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Center(
+                    child: (text != null)
+                        ? Text(
+                            '$text',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Chelsea',
+                                fontSize: 30,
+                                color: Colors.pink[800]),
+                          )
+                        : Text(
+                            'Tap Pomotaro\nand\nget quote!!',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Chelsea',
+                                fontSize: 35,
+                                color: Colors.pink[800]),
+                          ),
+                  ),
+                ),
               ),
-            ),
-            Expanded(
-              child: Center(
-                child: (author != null)
-                    ? Text(
-                        '$author',
-                        textAlign: TextAlign.end,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 30,
-                            color: Colors.pink[700]),
-                      )
-                    : Text(
-                        'Humm...',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Chelsea',
-                            fontSize: 30,
-                            color: Colors.pink[700]),
-                      ),
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: (author != null)
+                      ? Text(
+                          '$author',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Chelsea',
+                              fontSize: 30,
+                              color: Colors.pink[700]),
+                        )
+                      : Text(
+                          'Humm...',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Chelsea',
+                              fontSize: 30,
+                              color: Colors.pink[700]),
+                        ),
+                ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: FlatButton(
-                onPressed: () {
-                  setState(() {
-                    getData();
-                  });
-                },
-                child: Image.asset('images/tomato.png'),
+              Expanded(
+                flex: 3,
+                child: FlatButton(
+                  onPressed: () {
+                    setState(() {
+                      getData();
+                    });
+                  },
+                  child: Image.asset('images/tomato.png'),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
