@@ -15,14 +15,10 @@ class _countDownTimerState extends State<countDownTimer> {
   String minStr = '25';
   String secStr = '00';
 
-//  bool isRunning = false;
-
   void startOrStop() {
     if (timeLeftInSec == 0) {
       timeLeftInSec = 1500;
     }
-
-    // need to find how to stop the timer...
 
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
@@ -36,7 +32,6 @@ class _countDownTimerState extends State<countDownTimer> {
           final player = AudioCache();
           player.play('bikehorn.wav');
           timer.cancel();
-//          timeLeftInSec = 10;
         }
       });
     });
