@@ -14,8 +14,6 @@ class _quotesState extends State<quotes> {
 
   @override
   void initState() {
-    // TODO: implement initState
-//    print('can you see me?');
     super.initState();
   }
 
