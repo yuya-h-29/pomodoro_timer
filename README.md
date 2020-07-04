@@ -27,7 +27,7 @@
 🍅Flutter 
 
 
-### Information
+## Information
 
 🍅I only had 4 days to learn Dart / flutter from scratch and build this app, so this app is really easy. 
 
