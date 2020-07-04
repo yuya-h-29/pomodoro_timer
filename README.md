@@ -1,18 +1,27 @@
 # Pomodoro Timer 
 
 🍅This is a mobile app for simple Pomodoro timer, which is a 25min timer to immerse yourself in the task for 25 minutes. 
+
 🍅Hard to keep your motivation up? Try the random quote generator function!!!!
+
 
 ## Future Features
 
 🍅I'll add if-then schedule for the app, and Pomodoro timer will be uploaded on App Store!!
+
 🍅Look forward　to it !!
 
+
 ## Technologies
-- Programming language -
+
+### Programming language 
+
 🍅Dart 
-- Framework -
+
+### Framework 
+
 🍅Flutter 
+
 
 ### Information
 
