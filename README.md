@@ -13,7 +13,7 @@
 
 🍅I'll add if-then schedule for the app, and Pomodoro timer will be uploaded on App Store!!
 
-🍅Look forward　to it !!
+🍅Look forward to it !!
 
 
 ## Technologies
