@@ -1,4 +1,4 @@
-# Pomodoro Timer 
+# 🍅　Pomodoro Timer 🍅
 
 ![alt text](https://i.ibb.co/4g2XFDP/Screen-Shot-2020-07-04-at-21-32-25.png)
 ![alt text](https://i.ibb.co/4RHqN8h/Screen-Shot-2020-07-04-at-21-32-56.png)
@@ -34,4 +34,6 @@
 🍅But it was a giant leap for me.
 
 🍅Works on both iOS and Android, but I haven't deployed because I don't have Google play console account and app store acount.
+
+🍅P.S. I'm not a huge fan of Tomato.
 
